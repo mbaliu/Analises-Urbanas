@@ -11,7 +11,7 @@ O processo de trabalho é constituído por:
     De preferencia também desenhar a linha entre o ponto e o local calculado, para verificação do método.
 
 
-<br><br>
+<br>
 __________________
 ##### 2. [Teste obtenção da medida (via SQL)](https://github.com/mbaliu/Analises-Urbanas/blob/master/Logradouro/SQL_distanciaPontoLinha.sql)
 ```sql
