@@ -1,9 +1,12 @@
 
 ### Join entre os resultados dos anos
 ```sql
-SELECT resul_1995.*, resul_2010.NOME_2010
-FROM resul_1995, resul_2010
-WHERE resul_1995.[NUMERO DO CONTRIBUINTE] = resul_2010.[NUMERO DO CONTRIBUINTE];
+SELECT resul_1995.NOME_1995, resul_2010.*, 
+  switch(resul_1995.NOME_1995 = resul_2010.NOME_2010,'mesmo',
+  true, 'outro') AS aval
+FROM resul_1995  
+RIGHT JOIN resul_2010 
+ON resul_1995.[NUMERO DO CONTRIBUINTE] = resul_2010.[NUMERO DO CONTRIBUINTE];
 ```
 
 ### Consulta de SQLs
