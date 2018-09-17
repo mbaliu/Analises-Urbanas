@@ -39,34 +39,40 @@ FROM resul_2018
 
 #### Avaliação de Mudança de Proprietário - versão multiplas tabelas
 ```sql	
-SELECT qry03.*, resul_2000.NOME_2000,
-	switch(resul_2018.NOME_2018 = resul_2000.NOME_2000,'mesmo',
-		resul_2018.NOME_2018 <> resul_2000.NOME_2000, 'outro',
-		true, '-') AS aval_2000
+SELECT qry04.*, resul_1995.NOME_1995,
+	switch(resul_2018.NOME_2018 = resul_1995.NOME_1995,'mesmo',
+		resul_2018.NOME_2018 <> resul_1995.NOME_1995, 'outro',
+		true, '-') AS aval_1995
 
-FROM (SELECT qry02.*, resul_2005.NOME_2005,
-		switch(resul_2018.NOME_2018 = resul_2005.NOME_2005,'mesmo',
-			resul_2018.NOME_2018 <> resul_2005.NOME_2005, 'outro',
-			true, '-') AS aval_2005
+FROM (SELECT qry03.*, resul_2000.NOME_2000,
+		switch(resul_2018.NOME_2018 = resul_2000.NOME_2000,'mesmo',
+			resul_2018.NOME_2018 <> resul_2000.NOME_2000, 'outro',
+			true, '-') AS aval_2000
 
-	FROM (SELECT qry01.*, resul_2010.NOME_2010,
-			switch(resul_2018.NOME_2018 = resul_2010.NOME_2010,'mesmo',
-				resul_2018.NOME_2018 <> resul_2010.NOME_2010, 'outro',
-				true, '-') AS aval_2010
+	FROM (SELECT qry02.*, resul_2005.NOME_2005,
+			switch(resul_2018.NOME_2018 = resul_2005.NOME_2005,'mesmo',
+				resul_2018.NOME_2018 <> resul_2005.NOME_2005, 'outro',
+				true, '-') AS aval_2005
 
-			FROM (SELECT resul_2018.[NUMERO DO CONTRIBUINTE],
-						resul_2018.NOME_2018, 
-						resul_2015.NOME_2015, 
-						switch(resul_2018.NOME_2018 = resul_2015.NOME_2015,'mesmo',
-						resul_2018.NOME_2018 <> resul_2015.NOME_2015, 'outro',
-						true, '-') AS aval_2015
+		FROM (SELECT qry01.*, resul_2010.NOME_2010,
+				switch(resul_2018.NOME_2018 = resul_2010.NOME_2010,'mesmo',
+					resul_2018.NOME_2018 <> resul_2010.NOME_2010, 'outro',
+					true, '-') AS aval_2010
 
-					FROM resul_2018 
-						LEFT JOIN resul_2015 ON resul_2018.[NUMERO DO CONTRIBUINTE] = resul_2015.[NUMERO DO CONTRIBUINTE]) AS qry01
+				FROM (SELECT resul_2018.[NUMERO DO CONTRIBUINTE],
+							resul_2018.NOME_2018, 
+							resul_2015.NOME_2015, 
+							switch(resul_2018.NOME_2018 = resul_2015.NOME_2015,'mesmo',
+							resul_2018.NOME_2018 <> resul_2015.NOME_2015, 'outro',
+							true, '-') AS aval_2015
 
-			LEFT JOIN resul_2010 ON qry01.[NUMERO DO CONTRIBUINTE] = resul_2010.[NUMERO DO CONTRIBUINTE]) AS qry02
-	LEFT JOIN resul_2005 ON qry02.[NUMERO DO CONTRIBUINTE] = resul_2005.[NUMERO DO CONTRIBUINTE]) AS qry03
-LEFT JOIN resul_2000 ON qry03.[NUMERO DO CONTRIBUINTE] = resul_2000.[NUMERO DO CONTRIBUINTE]
+						FROM resul_2018 
+							LEFT JOIN resul_2015 ON resul_2018.[NUMERO DO CONTRIBUINTE] = resul_2015.[NUMERO DO CONTRIBUINTE]) AS qry01
+
+				LEFT JOIN resul_2010 ON qry01.[NUMERO DO CONTRIBUINTE] = resul_2010.[NUMERO DO CONTRIBUINTE]) AS qry02
+		LEFT JOIN resul_2005 ON qry02.[NUMERO DO CONTRIBUINTE] = resul_2005.[NUMERO DO CONTRIBUINTE]) AS qry03
+	LEFT JOIN resul_2000 ON qry03.[NUMERO DO CONTRIBUINTE] = resul_2000.[NUMERO DO CONTRIBUINTE]) AS qry04
+LEFT JOIN resul_1995 ON qry04.[NUMERO DO CONTRIBUINTE] = resul_1995.[NUMERO DO CONTRIBUINTE]
 
 ;
 ```
