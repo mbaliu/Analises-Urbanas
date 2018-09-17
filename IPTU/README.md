@@ -34,7 +34,8 @@ SELECT resul_2018.[NUMERO DO CONTRIBUINTE],
 
 FROM resul_2018 
 	RIGHT JOIN resul_2015 
-	ON resul_2018.[NUMERO DO CONTRIBUINTE] = resul_2015.[NUMERO DO CONTRIBUINTE];```
+	ON resul_2018.[NUMERO DO CONTRIBUINTE] = resul_2015.[NUMERO DO CONTRIBUINTE];
+```
 
 #### Avaliação de Mudança de Proprietário - versão multiplas tabelas
 ```sql	
