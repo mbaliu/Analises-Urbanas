@@ -35,3 +35,25 @@ SELECT resul_2018.[NUMERO DO CONTRIBUINTE],
 FROM resul_2018 
 	RIGHT JOIN resul_2015 
 	ON resul_2018.[NUMERO DO CONTRIBUINTE] = resul_2015.[NUMERO DO CONTRIBUINTE];```
+
+#### Avaliação de Mudança de Proprietário - versão multiplas tabelas
+```sql	
+SELECT qry01.*, resul_2010.NOME_2010,
+	switch(resul_2018.NOME_2018 = resul_2010.NOME_2010,'mesmo',
+		resul_2018.NOME_2018 <> resul_2010.NOME_2010, 'outro',
+		true, '-') AS aval_2010
+
+FROM (SELECT resul_2018.[NUMERO DO CONTRIBUINTE],
+			resul_2018.NOME_2018, 
+			resul_2015.NOME_2015, 
+			switch(resul_2018.NOME_2018 = resul_2015.NOME_2015,'mesmo',
+			resul_2018.NOME_2018 <> resul_2015.NOME_2015, 'outro',
+			true, '-') AS aval_2015
+
+	FROM resul_2018 
+		RIGHT JOIN resul_2015
+		ON resul_2018.[NUMERO DO CONTRIBUINTE] = resul_2015.[NUMERO DO CONTRIBUINTE]) AS qry01
+
+RIGHT JOIN resul_2010 ON qry01.[NUMERO DO CONTRIBUINTE] = resul_2010.[NUMERO DO CONTRIBUINTE]
+;
+```
