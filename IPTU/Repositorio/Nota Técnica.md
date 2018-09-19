@@ -7,4 +7,14 @@ TIPO DE PADRAO DA CONSTRUCAO (aka iptu_cat_padrao)
 ```sql
 SELECT DISTINCT "TIPO DE PADRAO DA CONSTRUCAO"
 INTO iptu_cat_padrao
-FROM "IPTU_2016_id"```
+FROM "IPTU_2016_id"
+```
+
+TIPO DE PADRAO TERRENO (aka iptu_cat_terreno)
+  
+(Processado em 50 sec)
+```sql
+SELECT DISTINCT "TIPO DE TERRENO"
+INTO iptu_cat_terreno
+FROM "IPTU_2016_id"
+```
