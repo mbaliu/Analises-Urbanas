@@ -12,18 +12,19 @@ FROM "IPTU_2016_id"
 
 |TIPO_USO_PADRAO|PADRAO|
 |-------------|--------|
-<sub>Residencial horizontal|-</sub>
-<sub>Residencial vertical|padrão A</sub>
-<sub>Comercial horizontal|padrão B</sub>
-<sub>Comercial vertical|padrão C</sub>
-<sub>Barracão/Telheiro/Oficina|padrão D</sub>
-<sub>Barracão/Telheiro/Oficina/Posto de serviço/Armazém/Depósito/Indústria|padrão E</sub>
-<sub>Oficina/Posto de serviço/Armazém/Depósito/Indústria|padrão F</sub>
+<sub>Residencial horizontal|<sub>-</sub>
+<sub>Residencial vertical|<sub>padrão A</sub>
+<sub>Comercial horizontal|<sub>padrão B</sub>
+<sub>Comercial vertical|<sub>padrão C</sub>
+<sub>Barracão/Telheiro/Oficina|<sub>padrão D</sub>
+<sub>Barracão/Telheiro/Oficina/Posto de serviço/Armazém/Depósito/Indústria|<sub>padrão E</sub>
+<sub>Oficina/Posto de serviço/Armazém/Depósito/Indústria|<sub>padrão F</sub>
 <sub>Indústria </sub>
 <sub>Templo/Clube/Ginásio ou Estádio esportivo/Museu/Hipódromo/Cinema/Teatro/Aeroporto/Estações/etc. </sub>
 <sub>Edifício de garagens </sub>
 <sub>TERRENO</sub>
 <sub>Normal</sub>
+
 
 TIPO DE PADRAO TERRENO (aka iptu_cat_terreno)
   
