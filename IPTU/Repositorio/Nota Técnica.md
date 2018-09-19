@@ -12,39 +12,39 @@ FROM "IPTU_2016_id"
 
 |TIPO_PADRAO|
 |---------|
-Residencial horizontal - padrão A
-Residencial horizontal - padrão B
-Residencial horizontal - padrão C
-Residencial horizontal - padrão D
-Residencial horizontal - padrão E
-Residencial horizontal - padrão F
-Residencial vertical - padrão A
-Residencial vertical - padrão B
-Residencial vertical - padrão C
-Residencial vertical - padrão D
-Residencial vertical - padrão E
-Residencial vertical - padrão F
-Comercial horizontal - padrão A
-Comercial horizontal - padrão B
-Comercial horizontal - padrão C
-Comercial horizontal - padrão D
-Comercial horizontal - padrão E
-Comercial vertical - padrão A
-Comercial vertical - padrão B
-Comercial vertical - padrão C
-Comercial vertical - padrão D
-Comercial vertical - padrão E
-Barracão/Telheiro/Oficina - padrão A
-Barracão/Telheiro/Oficina/Posto de serviço/Armazém/Depósito/Indústria - padrão B
-Oficina/Posto de serviço/Armazém/Depósito/Indústria - padrão C
-Oficina/Posto de serviço/Armazém/Depósito/Indústria - padrão D
-Indústria - padrão E
-Templo/Clube/Ginásio ou Estádio esportivo/Museu/Hipódromo/Cinema/Teatro/Aeroporto/Estações/etc. - padrão B
-Templo/Clube/Ginásio ou Estádio esportivo/Museu/Hipódromo/Cinema/Teatro/Aeroporto/Estações/etc. - padrão C
-Templo/Clube/Ginásio ou Estádio esportivo/Museu/Hipódromo/Cinema/Teatro/Aeroporto/Estações/etc. - padrão D
-Edifício de garagens - padrão A
-TERRENO
-Normal
+<sub>Residencial horizontal - padrão A</sub>
+<sub>Residencial horizontal - padrão B</sub>
+<sub>Residencial horizontal - padrão C</sub>
+<sub>Residencial horizontal - padrão D</sub>
+<sub>Residencial horizontal - padrão E</sub>
+<sub>Residencial horizontal - padrão F</sub>
+<sub>Residencial vertical - padrão A</sub>
+<sub>Residencial vertical - padrão B</sub>
+<sub>Residencial vertical - padrão C</sub>
+<sub>Residencial vertical - padrão D</sub>
+<sub>Residencial vertical - padrão E</sub>
+<sub>Residencial vertical - padrão F</sub>
+<sub>Comercial horizontal - padrão A</sub>
+<sub>Comercial horizontal - padrão B</sub>
+<sub>Comercial horizontal - padrão C</sub>
+<sub>Comercial horizontal - padrão D</sub>
+<sub>Comercial horizontal - padrão E</sub>
+<sub>Comercial vertical - padrão A</sub>
+<sub>Comercial vertical - padrão B</sub>
+<sub>Comercial vertical - padrão C</sub>
+<sub>Comercial vertical - padrão D</sub>
+<sub>Comercial vertical - padrão E</sub>
+<sub>Barracão/Telheiro/Oficina - padrão A</sub>
+<sub>Barracão/Telheiro/Oficina/Posto de serviço/Armazém/Depósito/Indústria - padrão B</sub>
+<sub>Oficina/Posto de serviço/Armazém/Depósito/Indústria - padrão C</sub>
+<sub>Oficina/Posto de serviço/Armazém/Depósito/Indústria - padrão D</sub>
+<sub>Indústria - padrão E</sub>
+<sub>Templo/Clube/Ginásio ou Estádio esportivo/Museu/Hipódromo/Cinema/Teatro/Aeroporto/Estações/etc. - padrão B</sub>
+<sub>Templo/Clube/Ginásio ou Estádio esportivo/Museu/Hipódromo/Cinema/Teatro/Aeroporto/Estações/etc. - padrão C</sub>
+<sub>Templo/Clube/Ginásio ou Estádio esportivo/Museu/Hipódromo/Cinema/Teatro/Aeroporto/Estações/etc. - padrão D</sub>
+<sub>Edifício de garagens - padrão A</sub>
+<sub>TERRENO</sub>
+<sub>Normal</sub>
 
 TIPO DE PADRAO TERRENO (aka iptu_cat_terreno)
   
