@@ -10,41 +10,31 @@ INTO iptu_cat_padrao
 FROM "IPTU_2016_id"
 ```
 
-|TIPO_PADRAO|
-|---------|
-<sub>Residencial horizontal - padrão A</sub>
-<sub>Residencial horizontal - padrão B</sub>
-<sub>Residencial horizontal - padrão C</sub>
-<sub>Residencial horizontal - padrão D</sub>
-<sub>Residencial horizontal - padrão E</sub>
-<sub>Residencial horizontal - padrão F</sub>
-<sub>Residencial vertical - padrão A</sub>
-<sub>Residencial vertical - padrão B</sub>
-<sub>Residencial vertical - padrão C</sub>
-<sub>Residencial vertical - padrão D</sub>
-<sub>Residencial vertical - padrão E</sub>
-<sub>Residencial vertical - padrão F</sub>
-<sub>Comercial horizontal - padrão A</sub>
-<sub>Comercial horizontal - padrão B</sub>
-<sub>Comercial horizontal - padrão C</sub>
-<sub>Comercial horizontal - padrão D</sub>
-<sub>Comercial horizontal - padrão E</sub>
-<sub>Comercial vertical - padrão A</sub>
-<sub>Comercial vertical - padrão B</sub>
-<sub>Comercial vertical - padrão C</sub>
-<sub>Comercial vertical - padrão D</sub>
-<sub>Comercial vertical - padrão E</sub>
-<sub>Barracão/Telheiro/Oficina - padrão A</sub>
-<sub>Barracão/Telheiro/Oficina/Posto de serviço/Armazém/Depósito/Indústria - padrão B</sub>
-<sub>Oficina/Posto de serviço/Armazém/Depósito/Indústria - padrão C</sub>
-<sub>Oficina/Posto de serviço/Armazém/Depósito/Indústria - padrão D</sub>
-<sub>Indústria - padrão E</sub>
-<sub>Templo/Clube/Ginásio ou Estádio esportivo/Museu/Hipódromo/Cinema/Teatro/Aeroporto/Estações/etc. - padrão B</sub>
-<sub>Templo/Clube/Ginásio ou Estádio esportivo/Museu/Hipódromo/Cinema/Teatro/Aeroporto/Estações/etc. - padrão C</sub>
-<sub>Templo/Clube/Ginásio ou Estádio esportivo/Museu/Hipódromo/Cinema/Teatro/Aeroporto/Estações/etc. - padrão D</sub>
-<sub>Edifício de garagens - padrão A</sub>
+|TIPO_USO_PADRAO|
+|-------------|
+<sub>Residencial horizontal</sub>
+<sub>Residencial vertical </sub>
+<sub>Comercial horizontal </sub>
+<sub>Comercial vertical </sub>
+<sub>Barracão/Telheiro/Oficina </sub>
+<sub>Barracão/Telheiro/Oficina/Posto de serviço/Armazém/Depósito/Indústria </sub>
+<sub>Oficina/Posto de serviço/Armazém/Depósito/Indústria </sub>
+<sub>Indústria </sub>
+<sub>Templo/Clube/Ginásio ou Estádio esportivo/Museu/Hipódromo/Cinema/Teatro/Aeroporto/Estações/etc. </sub>
+<sub>Edifício de garagens </sub>
 <sub>TERRENO</sub>
 <sub>Normal</sub>
+
+
+|PADRAO|
+|--------|
+<sub>-</sub>
+<sub>padrão A</sub>
+<sub>padrão B</sub>
+<sub>padrão C</sub>
+<sub>padrão D</sub>
+<sub>padrão E</sub>
+<sub>padrão F</sub>
 
 TIPO DE PADRAO TERRENO (aka iptu_cat_terreno)
   
