@@ -54,3 +54,12 @@ SELECT DISTINCT "TIPO DE TERRENO"
 INTO iptu_cat_terreno
 FROM "IPTU_2016_id"
 ```
+|TIPO DE TERRENO|
+|---------------:|
+0,0
+Lote de fundos
+De esquina
+Normal
+Lote de esquina em ZER
+Terreno interno
+De duas ou mais frentes
