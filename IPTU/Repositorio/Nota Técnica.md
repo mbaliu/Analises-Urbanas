@@ -56,10 +56,10 @@ FROM "IPTU_2016_id"
 ```
 |TIPO DE TERRENO|
 |---------------:|
-0,0
-Lote de fundos
-De esquina
-Normal
-Lote de esquina em ZER
-Terreno interno
-De duas ou mais frentes
+<sub>0,0</sub>
+<sub>Lote de fundos</sub>
+<sub>De esquina</sub>
+<sub>Normal</sub>
+<sub>Lote de esquina em ZER</sub>
+<sub>Terreno interno</sub>
+<sub>De duas ou mais frentes</sub>
