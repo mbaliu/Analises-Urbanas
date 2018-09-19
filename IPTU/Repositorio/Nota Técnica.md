@@ -22,7 +22,7 @@ FROM "IPTU_2016_id"
 <sub>Indústria </sub>
 <sub>Templo/Clube/Ginásio ou Estádio esportivo/Museu/Hipódromo/Cinema/Teatro/Aeroporto/Estações/etc. </sub>
 <sub>Edifício de garagens </sub>
-  
+\-
 <sub>TERRENO</sub>
 <sub>Normal</sub>
 
