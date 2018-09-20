@@ -60,6 +60,8 @@ cond = [NUMERO DO CONDOMINIO]
 
 ### Regionalização dos Setores
 
+![Setores nas Regiões](https://github.com/mbaliu/Analises-Urbanas/blob/master/IPTU/Repositorio/Regioes_SetorFiscal.png)
+
 REGIAO|SETORES_FISCAIS
 :--------:|:---------
 Centro|<sub>'35','33','6','9','8','11','34','10','5','4','20','7','1','19','18'</sub>
