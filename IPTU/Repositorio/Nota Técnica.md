@@ -47,7 +47,9 @@ FROM "IPTU_2016_id"
 
 
 
-Access - SQLC
+### Access - SQLC
+Construção da coluna contendo o SQLC (SQL condominial).
+
 ```sql
 SELECT  switch( 
 (mid(IPTU_Minhocao.Cond,1,2))  <> '00', left(IPTU_Minhocao.[NUMERO DO CONTRIBUINTE],6)&'0000'&(mid(IPTU_Minhocao.Cond,1,2)),
