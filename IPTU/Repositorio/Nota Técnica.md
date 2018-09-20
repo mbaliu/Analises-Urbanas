@@ -44,3 +44,14 @@ FROM "IPTU_2016_id"
 <sub>Lote de esquina em ZER</sub>
 <sub>Terreno interno</sub>
 <sub>De duas ou mais frentes</sub>
+
+
+
+Access - SQLC
+```sql
+SELECT  switch( 
+(mid(IPTU_Minhocao.Cond,1,2))  <> '00', left(IPTU_Minhocao.[NUMERO DO CONTRIBUINTE],6)&'0000'&(mid(IPTU_Minhocao.Cond,1,2)),
+(mid(IPTU_Minhocao.Cond,1,2))  = '00', left(IPTU_Minhocao.[NUMERO DO CONTRIBUINTE],10)&(mid(IPTU_Minhocao.Cond,1,2))
+) AS SQLC
+cond = [NUMERO DO CONDOMINIO]
+```
