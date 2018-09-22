@@ -51,11 +51,20 @@ FROM "IPTU_2016_id"
 Construção da coluna contendo o SQLC (SQL condominial).
 <sub>"Linguagem Access"</sub>
 ```sql
+---------ACCESS-----------
 SELECT  switch( 
 (mid(IPTU_Minhocao.Cond,1,2))  <> '00', left(IPTU_Minhocao.[NUMERO DO CONTRIBUINTE],6)&'0000'&(mid(IPTU_Minhocao.Cond,1,2)),
 (mid(IPTU_Minhocao.Cond,1,2))  = '00', left(IPTU_Minhocao.[NUMERO DO CONTRIBUINTE],10)&(mid(IPTU_Minhocao.Cond,1,2))
 ) AS SQLC
 cond = [NUMERO DO CONDOMINIO]
+
+---------POSTGRESQL-----------
+SELECT  (CASE 
+	WHEN left(iptu16_centro."NUMERO DO CONDOMINIO",2)  <> '00' THEN concat(left(iptu16_centro."NUMERO DO CONTRIBUINTE",6), '0000', left(iptu16_centro."NUMERO DO CONDOMINIO",2))
+	WHEN left(iptu16_centro."NUMERO DO CONDOMINIO",2)  = '00' THEN concat(left(iptu16_centro."NUMERO DO CONTRIBUINTE",10), left(iptu16_centro."NUMERO DO CONDOMINIO",2))
+END) AS SQLC,
+*
+FROM iptu16_centro
 ```
 
 ### Regionalização dos Setores
