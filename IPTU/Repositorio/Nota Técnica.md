@@ -59,6 +59,7 @@ SELECT  switch(
 cond = [NUMERO DO CONDOMINIO]
 
 ---------POSTGRESQL-----------
+---7 sec para o centro
 SELECT  (CASE 
 	WHEN left(iptu16_centro."NUMERO DO CONDOMINIO",2)  <> '00' THEN concat(left(iptu16_centro."NUMERO DO CONTRIBUINTE",6), '0000', left(iptu16_centro."NUMERO DO CONDOMINIO",2))
 	WHEN left(iptu16_centro."NUMERO DO CONDOMINIO",2)  = '00' THEN concat(left(iptu16_centro."NUMERO DO CONTRIBUINTE",10), left(iptu16_centro."NUMERO DO CONDOMINIO",2))
