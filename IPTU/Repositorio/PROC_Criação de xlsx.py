@@ -9,6 +9,7 @@ wb = openpyxl.Workbook()
 wb.create_sheet('FILTRO')
 ws = wb['FILTRO']
 
+# NOME DOS CAMPOS
 r1 = ['primeiro','segundo','terceiro','quarto','quinto']
 
 # ESTILOS
