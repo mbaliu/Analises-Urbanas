@@ -7,14 +7,18 @@ v = []
 for f in iface.activeLayer().getFeatures():
     try:
         value = float(f['EV005'])
+        # Limita o universo para até 40 SM
         if value <= 40:
             v.append(value)
         
     except:
         continue
-        
+
+# Separa em classes de 1 SM
 plt.hist(v, bins=40)
+# Separa em classes de 0,5 SM
 plt.hist(v, bins=80)
+
 plt.show()
 ```
 ![Renda][mapa1]
