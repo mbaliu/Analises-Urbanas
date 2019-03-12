@@ -1,8 +1,6 @@
 Para a avaliação da distribuição dos dados do Censo 2010, segue-se alguns rascunhos de análises.
 
 ```python
-import PyQt5
-
 v = []
 for f in iface.activeLayer().getFeatures():
     try:
