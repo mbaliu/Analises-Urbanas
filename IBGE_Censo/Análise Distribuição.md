@@ -1,6 +1,8 @@
 Para a avaliação da distribuição dos dados do Censo 2010, segue-se alguns rascunhos de análises.
 
 ```python
+import matplotlib.pyplot as plt
+
 v = []
 for f in iface.activeLayer().getFeatures():
     try:
