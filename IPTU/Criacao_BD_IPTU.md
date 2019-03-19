@@ -48,4 +48,5 @@ __IMPORTAÇÃO DOS DADOS__
 -- Importação dos dados para a nova tabela
 SET client_encoding TO WIN1252;
 COPY {schema}.{table} FROM {path_csv} DELIMITER ';' CSV HEADER;
+
 ```
