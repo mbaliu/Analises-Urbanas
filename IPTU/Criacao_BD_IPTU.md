@@ -44,9 +44,10 @@ CREATE TABLE IF NOT EXISTS {schema}.{table} (
     )
 ```
 __IMPORTAÇÃO DOS DADOS__
-````sql
+```sql
 -- Importação dos dados para a nova tabela
 SET client_encoding TO WIN1252;
 COPY {schema}.{table} FROM {path_csv} DELIMITER ';' CSV HEADER;
-
 ```
+
+
