@@ -1,5 +1,6 @@
 # Criação do Banco de Dados de IPTU
 Após a observação dos dados contidos no arquivo CSV, a análise de cada coluna por meio do __tipo de dado__ e __tamanho máximo__ em cada coluna (processo feito manualmente e não foi verificado), obtemos o código para criação da tabela base e posteriormente para a importação dos dados com o COPY.
+
 __CRIAÇÃO DA TABELA__
 ```sql
 -- Criação da tabela contendo as colunas e sua estrutura
@@ -42,7 +43,7 @@ CREATE TABLE IF NOT EXISTS {schema}.{table} (
     "FASE DO CONTRIBUINTE" integer
     )
 ```
-__IMPORTAÇÃO DO SQL__
+__IMPORTAÇÃO DOS DADOS__
 ````sql
 -- Importação dos dados para a nova tabela
 SET client_encoding TO WIN1252;
