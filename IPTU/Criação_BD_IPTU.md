@@ -4,7 +4,7 @@ Após a observação dos dados contidos no arquivo CSV, a análise de cada colun
 ```sql
 -- Criação da tabela contendo as colunas e sua estrutura
 CREATE TABLE IF NOT EXISTS {schema}.{table} (
-    id integer,
+    --id integer,
     "NUMERO DO CONTRIBUINTE" varchar(12),
     "ANO DO EXERCICIO" integer,
     "NUMERO DA NL" integer,
@@ -42,7 +42,14 @@ CREATE TABLE IF NOT EXISTS {schema}.{table} (
     "FASE DO CONTRIBUINTE" integer
     )
 ```
-````sql
+
+## Tratamento dos dados
+Temos que ter o cuidado que os dados fornecidos possuem como divisor decimal a vírgula ','. Por tanto, temos que fazer a substituição das vírgulas por ponto.
+
+* Ou fazemos a __substituição__
+* Ou carregamos como _varchar_ e depis convertemos para numéric ou real.
+
+```sql
 -- Importação dos dados para a nova tabela
 SET client_encoding TO WIN1252;
 COPY {schema}.{table} FROM {path_csv} DELIMITER ';' CSV HEADER;
