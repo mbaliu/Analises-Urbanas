@@ -54,3 +54,29 @@ Temos que ter o cuidado que os dados fornecidos possuem como divisor decimal a v
 SET client_encoding TO WIN1252;
 COPY {schema}.{table} FROM {path_csv} DELIMITER ';' CSV HEADER;
 ```
+__SUBSTITUIÇÃO__
+```sql
+regexp_replace(varchar_field, ',', '.') :: numeric AS numeric_field
+```
+
+https://stackoverflow.com/questions/18707393/postgres-copy-importing-an-integer-with-a-comma
+## AJUSTE DOS CAMPOS
+Para a execução dos trabalhos é necessário a criação de novos campos, tais como SQLC e SQLCond
+
+__SQLC:__ É o SQL concatenado com o número de condomínio
+
+__SQLCond:__ É a representação da identificação dos TERRENOS.
+
+```sql
+-- ADICIONA A COLUNA SQLC
+ALTER TABLE iptu._2019
+ADD COLUMN "SQLC" varchar(12);
+
+UPDATE iptu._2019
+SET "SQLC"   =   left("NUMERO DO CONTRIBUINTE", 10)  ||  left("NUMERO DO CONDOMINIO", 2);
+```
+
+
+
+
+Alterar a ordem das colunas
