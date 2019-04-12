@@ -58,6 +58,20 @@ __SUBSTITUIÇÃO__
 ```sql
 regexp_replace(varchar_field, ',', '.') :: numeric AS numeric_field
 ```
+### Remoção dos dígistos verificadores
+
+É recomendado a remoção do dígito verificador, tanto para a diminuição do tamanho da base, quanto para facilitar as operações.
+
+```sql
+-- NUMERO DO CONTRIBUINTE
+UPDATE iptu.table
+SET "NUMERO DO CONTRIBUINTE" :: varchar(10)
+--"NUMERO DO CONDOMINIO"
+UPDATE iptu.table
+SET "NUMERO DO CONDOMINIO" :: varchar(2)
+--...
+
+```
 
 https://stackoverflow.com/questions/18707393/postgres-copy-importing-an-integer-with-a-comma
 ## AJUSTE DOS CAMPOS
