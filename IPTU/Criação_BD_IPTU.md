@@ -67,16 +67,28 @@ __SQLC:__ É o SQL concatenado com o número de condomínio
 
 __SQLCond:__ É a representação da identificação dos TERRENOS.
 
+__SQLC:__
 ```sql
 -- ADICIONA A COLUNA SQLC
 ALTER TABLE iptu._2019
-ADD COLUMN "SQLC" varchar(12);
+ADD COLUMN IF NOT EXISTS "SQLC" varchar(12);
 
 UPDATE iptu._2019
 SET "SQLC"   =   left("NUMERO DO CONTRIBUINTE", 10)  ||  left("NUMERO DO CONDOMINIO", 2);
 ```
 
+__SQLCond:__ 
+```sql
+-- ADICIONA A COLUNA SQLC
+ALTER TABLE iptu._2019
+ADD COLUMN IF NOT EXISTS "SQLCond" varchar(12);
 
+UPDATE iptu._2019
+SET "SQLCond"  = (CASE
+                    WHEN left(iptu._2019."NUMERO DO CONDOMINIO",2)  <> '00' THEN concat(left(iptu._2019."NUMERO DO CONTRIBUINTE",6), '0000', left(iptu._2019."NUMERO DO CONDOMINIO",2))
+                    ELSE "SQLC"
+                  END)
+```
 
 
 Alterar a ordem das colunas
