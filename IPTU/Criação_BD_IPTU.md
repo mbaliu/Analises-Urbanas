@@ -84,10 +84,13 @@ ALTER TABLE iptu._2019
 ADD COLUMN IF NOT EXISTS "SQLCond" varchar(12);
 
 UPDATE iptu._2019
-SET "SQLCond"  = (CASE
-                    WHEN left(iptu._2019."NUMERO DO CONDOMINIO",2)  <> '00' THEN concat(left(iptu._2019."NUMERO DO CONTRIBUINTE",6), '0000', left(iptu._2019."NUMERO DO CONDOMINIO",2))
+SET "SQLCond"  = CASE
+                    WHEN left(iptu._2019."SQLC",2)  <> '00' 
+                    THEN concat(left(iptu._2019."SQLC",6), --SQ
+                        '0000', --L Condominio 
+                        left(iptu._2019."SQLC",2)) -- Condominio
                     ELSE "SQLC"
-                  END)
+                  END
 ```
 
 
