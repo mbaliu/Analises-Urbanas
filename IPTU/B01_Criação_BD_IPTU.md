@@ -112,3 +112,11 @@ SET "SQLCond"  = CASE
 
 
 Alterar a ordem das colunas
+
+
+## CODIFICAÇÃO DAS CATEGORIAS
+# TIPO DE CONTRIBUINTE
+Para o tipo de contribuinte, por só permitir 3 tipos de dados, podemos codifica-los, de forma a ser mais eficiente e mais econômico. 
+
+Pode-se criar uma nova coluna ou alterar a já existente.
+```sql
