@@ -18,6 +18,6 @@ SET "SQL" = "NUMERO DO CONTRIBUINTE" :: char(10)
 
 -- Trata o dado de condominio
 UPDATE iptu.sql
-SET "NUMERO DO CONDOMINIO" = "NUMERO DO CONDOMINIO" :: char(2) AS "CONDOMINIO"
+SET "NUMERO DO CONDOMINIO" = "NUMERO DO CONDOMINIO" :: char(2)
 
 ```
