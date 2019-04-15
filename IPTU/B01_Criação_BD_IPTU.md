@@ -65,10 +65,10 @@ regexp_replace(varchar_field, ',', '.') :: numeric AS numeric_field
 ```sql
 -- NUMERO DO CONTRIBUINTE
 UPDATE iptu.table
-SET "NUMERO DO CONTRIBUINTE" :: varchar(10)
+SET "NUMERO DO CONTRIBUINTE" = "NUMERO DO CONTRIBUINTE" :: varchar(10)
 --"NUMERO DO CONDOMINIO"
 UPDATE iptu.table
-SET "NUMERO DO CONDOMINIO" :: varchar(2)
+SET "NUMERO DO CONDOMINIO" = "NUMERO DO CONDOMINIO" :: varchar(2)
 --...
 
 ```
