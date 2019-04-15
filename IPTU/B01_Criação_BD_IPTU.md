@@ -119,4 +119,19 @@ Alterar a ordem das colunas
 Para o tipo de contribuinte, por só permitir 3 tipos de dados, podemos codifica-los, de forma a ser mais eficiente e mais econômico. 
 
 Pode-se criar uma nova coluna ou alterar a já existente.
+
+A equivalência dos códigos é:
+|TIPO DE CONTRIBUINTE|
+|----------------------|
+|None|0|
+|PESSOA FISICA (CPF)|1|
+|PESSOA JURIDICA (CNPJ)|2|
+
 ```sql
+UPDATE iptu._2019
+SET "TIPO DE CONTRIBUINTE 1" = CASE WHEN "TIPO DE CONTRIBUINTE 1" is Null THEN 0
+															WHEN "TIPO DE CONTRIBUINTE 1" like 'PESSOA FISICA (CPF)' THEN 1
+															WHEN "TIPO DE CONTRIBUINTE 1" like 'PESSOA JURIDICA (CNPJ)' THEN 2
+															END
+```
+
