@@ -42,23 +42,50 @@ CREATE TABLE IF NOT EXISTS {schema}.{table} (
     "FASE DO CONTRIBUINTE" integer
     )
 ```
-
-## Tratamento dos dados
-Temos que ter o cuidado que os dados fornecidos possuem como divisor decimal a vírgula ','. Por tanto, temos que fazer a substituição das vírgulas por ponto.
-
-* Ou fazemos a __substituição__
-* Ou carregamos como _varchar_ e depis convertemos para numéric ou real.
+## Carregamento dos Dados
 
 ```sql
 -- Importação dos dados para a nova tabela
 SET client_encoding TO WIN1252;
 COPY {schema}.{table} FROM {path_csv} DELIMITER ';' CSV HEADER;
 ```
-__SUBSTITUIÇÃO__
+
+## Tratamento dos dados
+Temos que ter o cuidado que os dados fornecidos possuem como divisor decimal a vírgula ','. Por tanto, temos que fazer a substituição das vírgulas por ponto.
+
+As seguintes variáveis foram importadas como TEXTO por possírem divisor decimal a vígula, sendo que deviam ser o ponto:
+
+|VARIÁVEL|TIPO|
+|--------|----|
+|FRACAO IDEAL|numeric|
+|TESTADA PARA CALCULO|numeric|
+|VALOR DO M2 DO TERRENO|numeric|
+|VALOR DO M2 DE CONSTRUCAO|numeric|
+|FATOR DE OBSOLESCENCIA|numeric|
+|AREA DO TERRENO|int|
+|AREA CONSTRUIDA|int|
+|AREA OCUPADA|int|
+
+
+
+1. Ou fazemos a __substituição__ no arquivo CSV.
+2. Ou carregamos como _varchar_ e depois convertemos para numéric ou real.
+
+__2. SUBSTITUIÇÃO__
 ```sql
-regexp_replace(varchar_field, ',', '.') :: numeric AS numeric_field
+-- regexp_replace(varchar_field, ',', '.') :: numeric AS numeric_field
+
+-- Conversão dos números decimais
+ALTER TABLE iptu._2019
+	ALTER COLUMN  "TESTADA PARA CALCULO" TYPE numeric USING regexp_replace("TESTADA PARA CALCULO", ',', '.') :: numeric,
+	ALTER COLUMN  "FRACAO IDEAL" TYPE numeric USING regexp_replace("FRACAO IDEAL", ',', '.') :: numeric,
+	ALTER COLUMN  "VALOR DO M2 DO TERRENO" TYPE numeric USING regexp_replace("VALOR DO M2 DO TERRENO", ',', '.') :: numeric,
+	ALTER COLUMN  "VALOR DO M2 DE CONSTRUCAO" TYPE numeric USING regexp_replace("VALOR DO M2 DE CONSTRUCAO", ',', '.') :: numeric,
+	ALTER COLUMN  "FATOR DE OBSOLESCENCIA" TYPE numeric USING regexp_replace("FATOR DE OBSOLESCENCIA", ',', '.') :: numeric
 ```
-### Remoção dos dígistos verificadores
+
+
+### Remoção dos dígitos verificadores
 
 É recomendado a remoção do dígito verificador, tanto para a diminuição do tamanho da base, quanto para facilitar as operações.
 
@@ -72,6 +99,17 @@ SET "NUMERO DO CONDOMINIO" = "NUMERO DO CONDOMINIO" :: varchar(2)
 --...
 
 ```
+### Remoção dos Desnecessários
+
+Existem campos que não possuem dados úteis, por todos possírem o mesmo valor e não distingui-lo de outros anos. Assim podemos remover algumas colunas.
+
+```sql
+ALTER TABLE iptu._2019
+	DROP COLUMN "DATA DO CADASTRAMENTO"
+	DROP COLUMN "NUMERO DA NL"
+```
+
+A remoção das colunas desnessárias e dos dígitos verificadores, nos permite uma economia aproximada de 56 Mb.
 
 https://stackoverflow.com/questions/18707393/postgres-copy-importing-an-integer-with-a-comma
 ## AJUSTE DOS CAMPOS
