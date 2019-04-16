@@ -1,4 +1,14 @@
 
+```sql
+-- Cria a coluna para o ano
+ALTER TABLE iptu.sql
+	ADD COLUMN "2019" integer,
+	ADD COLUMN "2018" integer
+  
+-- ANO - Verifica se os SQL existem nas 
+
+```
+
 
 ## VALORES DE CATEGORIAS
 
@@ -15,3 +25,6 @@ Retorna uma tabela de todos os valores possíveis para aquela variável.
 |PESSOA FISICA (CPF)|
 |PESSOA JURIDICA (CNPJ)|
 |None|
+
+
+
