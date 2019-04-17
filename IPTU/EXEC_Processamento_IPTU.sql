@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS {schema}.{table} (
 
 -- Importação dos dados para a nova tabela
 	-- OS DADOS DEVEM ESTAR NA PASTA \\spurbsp163\xampp\htdocs\qgis\IPTU_load
+	-- Somente o SUPERUSER pode fazer esta operação
 SET client_encoding TO WIN1252;
 COPY {schema}.{table} FROM '\\spurbsp163\xampp\htdocs\qgis\IPTU_load{CSV}' DELIMITER ';' CSV HEADER;
 
@@ -56,7 +57,7 @@ ALTER TABLE {schema}.{table}
 
 -- Remoção dos dígitos de verificação
 ALTER TABLE {schema}.{table}
-	ALTER COLUMN  "NUMERO DO CONTRIBUINTE" TYPE char(10)USING left("NUMERO DO CONDOMINIO" , 10),
+	ALTER COLUMN  "NUMERO DO CONTRIBUINTE" TYPE char(10)USING left("NUMERO DO CONTRIBUINTE" , 10),
 	ALTER COLUMN  "NUMERO DO CONDOMINIO" TYPE varchar(2) USING left("NUMERO DO CONDOMINIO" , 2);
 
 -- Remoção de Colunas desnessárias
